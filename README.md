@@ -125,7 +125,7 @@ Saiva will attempt **5 retries** over the course of **7 hours**. When all attemp
 
 The table below outlines the estimated wait time for each retry request, assuming that rand(30) always returns 0.
 
-|  Retry number  | Next Retry in  |  Total waiting time |
+|  Retry number  | Next retry in  |  Total waiting time |
 | ------------ | ------------ | ------------ |
 | 1 | 1m   | 0h 1m  |
 |  2 | 15m  | 0h 16m  |
