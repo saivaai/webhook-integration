@@ -42,7 +42,7 @@ If this ping fails (200 Ok not returned), Saiva will create the web hook in a di
 
 ## Service Level Agreement
 
-For daily_risk_report, Web hook will be fired once a day by 8:00a ET. SLA is successful only if Web hook call is successful.
+For daily_risk_report, Web hook will be fired once a day by **8:00a Eastern Standard Time**. SLA is successful only if Web hook call is successful.
 
 ## Authentication
 
