@@ -76,7 +76,7 @@ const verifyHmac = (
 
 ## Payload Description (daily_risk_report)
 
-The payload will contain an array of report objects FacilityRTHRiskReport (see SAIV-2280)  one per facility
+The payload will contain an array of report objects FacilityRiskReport, one per facility
 
 ```
 {
@@ -94,7 +94,7 @@ The payload will contain an array of report objects FacilityRTHRiskReport (see S
       },
       ...
       {
-        // 10th facility risk report FacilityRTHRiskReport object
+        // 10th facility risk report FacilityRiskReport object
       }
     ]
 }
