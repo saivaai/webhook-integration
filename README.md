@@ -1,4 +1,3 @@
-# Web Hooks Integration Guide
 ### OverviewOverview
 
 A web hook is a simple event-notification system. When an event occurs in SAIVA, a payload of JSON data containing information representing a report is sent via POST to a specified endpoint URL over HTTPS.
@@ -117,6 +116,7 @@ sidekiq_retry_in do |index, _exception|
 end
 
 ```
+
 
 This formula increases the amount of time between each retry, while assigning a random number of seconds to avoid consistent failures from overload or contention.
 
