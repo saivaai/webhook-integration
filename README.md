@@ -10,27 +10,27 @@ Each delivery will include a Saiva-Event-ID header. This will contain an unique 
 
 Web hooks have three components. A name, an endpoint URL, and a secret key.
 
-Name (user-defined): The name is simply a reference for you. It can contain any string value.
+- **Name** (user-defined): The name is simply a reference for you. It can contain any string value.
 
-Endpoint URL (user defined): This is the URL to which we will send the POST data when the event occurs. This must be a valid URL and must be https. 
+- **Endpoint URL** (user defined): This is the URL to which we will send the POST data when the event occurs. This must be a valid URL and must be https. 
 
-Secret Key (auto-generated): This secret key will be used to generate a signature header that you may use to verify the hook data was sent from Saiva. The secret key will be used in conjunction with the web hook’s payload to generate a digital signature. 
+- **Secret Key** (auto-generated): This secret key will be used to generate a signature header that you may use to verify the hook data was sent from Saiva. The secret key will be used in conjunction with the web hook’s payload to generate a digital signature. 
 
-Enabled (yes/no): Allows the user to keep the web hook definition but disable calls to the endpoint. This switch will also let the user know if the web hook was disabled due to failure 
+- **Enabled** (yes/no): Allows the user to keep the web hook definition but disable calls to the endpoint. This switch will also let the user know if the web hook was disabled due to failure 
 
 Web hook should return 200 Ok if authentication succeeded AND payload received ok.  
 
 ## Content settings 
 
-Report Type (single selection): This setting is used to define which report type will be contained in the payload (in v1 - daily_risk_report) 
+Report Type (single selection): This setting is used to define which report type will be contained in the payload (in v1 - *daily_risk_report*) 
 
-For Report Type = daily_risk_report:
+For Report Type = *daily_risk_report*:
 
 - QM Type (single selection): This setting is used to define which QM report will be generated (in v1 - rth, falls or wounds)
 
 - Facility (multi-selector): Facility selector. Selecting a facility
 
-For other future report types (i.e. cross-facility_report) content settings may vary TBD
+For other future report types (i.e. *cross-facility_report*) content settings may vary TBD
 
 User may define multiple web hooks for daily_risk_report as long as settings do not overlap. For example, multiple web hooks can exist for the same Report Type daily_risk_report only if a different QM type is set or list of different facilities selected. Otherwise, duplicate web hook error is shown upon save. 
 
@@ -74,7 +74,7 @@ const verifyHmac = (
 }
 ```
 
-Payload Description (daily_risk_report)
+## Payload Description (daily_risk_report)
 
 The payload will contain an array of report objects FacilityRTHRiskReport (see SAIV-2280)  one per facility
 
@@ -119,10 +119,9 @@ end
 
 ```
 
-
 This formula increases the amount of time between each retry, while assigning a random number of seconds to avoid consistent failures from overload or contention.
 
-Saiva will attempt 5 retries over the course of 7 hours. When all attempts have been exhausted, the web hook will be disabled and an error message will be sent to the org administrators via email. 
+Saiva will attempt **5 retries** over the course of **7 hours**. When all attempts have been exhausted, the web hook will be disabled and an error message will be sent to the org administrators via email. 
 
 The table below outlines the estimated wait time for each retry request, assuming that rand(30) always returns 0.
 
