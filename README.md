@@ -26,9 +26,9 @@ Report Type (single selection): This setting is used to define which report type
 
 For Report Type = *daily_risk_report*:
 
-- QM Type (single selection): This setting is used to define which QM report will be generated (in v1 - rth, falls or wounds)
+- **QM Type** (single selection): This setting is used to define which QM report will be generated (in v1 - rth, falls or wounds)
 
-- Facility (multi-selector): Facility selector. Selecting a facility
+- **Facility** (multi-selector): Facility selector. Selecting a facility
 
 For other future report types (i.e. *cross-facility_report*) content settings may vary TBD
 
