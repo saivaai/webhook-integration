@@ -1,0 +1,144 @@
+{
+    "$schema": "https://github.com/saivaai/webhook-integration/tree/dev/schema",
+    "$ref": "#/definitions/DailyRiskReport",
+    "definitions": {
+        "DailyRiskReport": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "version": {
+                    "type": "string"
+                },
+                "web_hook_name": {
+                    "type": "string"
+                },
+                "report_type": {
+                    "type": "string"
+                },
+                "report_date": {
+                    "type": "string"
+                },
+                "client": {
+                    "type": "string"
+                },
+                "payload_length": {
+                    "type": "integer"
+                },
+                "payload": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FacilityRiskReport"
+                    }
+                }
+            },
+            "required": [
+                "client",
+                "payload",
+                "payload_length",
+                "report_date",
+                "report_type",
+                "version",
+                "web_hook_name"
+            ]
+        },
+        "FacilityRiskReport": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "version": {
+                    "type": "string"
+                },
+                "qm_type": {
+                    "type": "string"
+                },
+                "client": {
+                    "type": "string"
+                },
+                "facility_name": {
+                    "type": "string"
+                },
+                "facility_id": {
+                    "type": "integer"
+                },
+                "report_date": {
+                    "type": "string"
+                },
+                "risk_list_length": {
+                    "type": "integer"
+                },
+                "report_download_url" : {
+                  "type": [ "string", "null" ]
+                },
+                "risk_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RiskList"
+                    }
+                }
+            },
+            "required": [
+                "client",
+                "facility_id",
+                "facility_name",
+                "qm_type",
+                "report_date",
+                "risk_list",
+                "risk_list_length",
+                "version"
+            ],
+            "title": "FacilityRiskReport"
+        },
+        "RiskList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "patient_id": {
+                    "type": "integer"
+                },
+                "patient_mrn": {
+                    "type": "string"
+                },
+                "rank_today": {
+                    "type": "integer"
+                },
+                "rank_yesterday": {
+                    "type": [ "integer", "null" ]
+                },
+                "days_ranked": {
+                    "type": "integer"
+                },
+                "payer": {
+                    "type": [ "string", "null" ]
+                },
+                "primary_physician": {
+                    "type": [ "string", "null" ]
+                },
+                "initial_admission_date": {
+                    "type": "string"
+                },
+                "last_transfer_date": {
+                    "type": [ "string", "null" ]
+                },
+                "risk_rank_reasons": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "days_ranked",
+                "initial_admission_date",
+                "last_transfer_date",
+                "patient_id",
+                "patient_mrn",
+                "payer",
+                "primary_physician",
+                "rank_today",
+                "rank_yesterday",
+                "risk_rank_reasons"
+            ],
+            "title": "RiskList"
+        }
+    }
+}
