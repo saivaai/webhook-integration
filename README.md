@@ -134,3 +134,7 @@ The table below outlines the estimated wait time for each retry request, assumin
 |  4 | 120m  | 3h 16m  |
 |  5 | 240m  | 7h 16m  |
 
+## Get Help
+For questions and support issues please contact support@saiva.ai
+
+
