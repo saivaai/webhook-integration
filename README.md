@@ -81,22 +81,20 @@ The payload will contain an array of report objects FacilityRTHRiskReport (see S
 ```json
 {
   "version": "v1",
-  "web_hook_name": "Sample RTH Daily Report For 10 Facilities", /* From user web hook setting */
+  "web_hook_name": "Sample RTH Daily Report For 10 Facilities", # From user web hook setting
   "report_type": "daily_risk_report",
   "report_date": "02/13/2023",
   "client": "Sample",
   "payload_length": 10,
   "payload": [
       {
-        /*
-        1st facility risk report as FacilitRiskReport object
-        Payload identical to sFTP facility export see SAIV-2280
-        version, client and report_date should be identical to the above
-        */
+        # 1st facility risk report as FacilitRiskReport object
+        # Payload identical to sFTP facility export see SAIV-2280
+        # version, client and report_date should be identical to the above
       },
       ...
       {
-        /* 10th facility risk report FacilityRTHRiskReport object */
+        # 10th facility risk report FacilityRTHRiskReport object
       }
     ]
 }
