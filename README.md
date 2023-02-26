@@ -103,6 +103,7 @@ The payload will contain an array of report objects FacilityRTHRiskReport (see S
 ## JSON Schema (daily_risk_report)
 
 [DailyRiskReport schema](https://github.com/saivaai/webhook-integration/blob/dev/schema/DailyRiskReport.json "DailyRiskReport schema")
+This Schema uses the FacilityRiskReport object schema
 
 ## Retry policy
 
