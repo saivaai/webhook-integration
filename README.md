@@ -1,8 +1,8 @@
 # Web Hooks Integration Guide
 
-### Overview
+## Overview
 
-A web hook is a simple event-notification system. When an event occurs in SAIVA, a payload of JSON data containing information representing a report is sent via POST to a specified endpoint URL over HTTPS.
+A web hook is a simple event-notification system. When an event occurs in SAIVA, such as daily risk report is ready for consumption by an external party, a payload of JSON data containing information representing a report is sent via POST to a specified endpoint URL over HTTPS.
 
 Each delivery will include a Saiva-Event-ID header. This will contain an unique id associated with this delivery.
 
